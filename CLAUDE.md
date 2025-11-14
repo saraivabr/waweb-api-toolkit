@@ -460,10 +460,12 @@ Se você quer disponibilizar em um servidor:
 
 ```javascript
 let backendInfo = {
-    url: "ws://SEU-SERVIDOR.com:2020",  // Altere aqui
+    url: "wss://SEU-SERVIDOR.com:2020",  // Use wss:// para conexão segura em produção
     timeout: 10000
 };
 ```
+
+> ⚠️ **Importante:** Para produção, sempre use `wss://` (WebSocket Seguro) ao invés de `ws://`. Você precisará configurar certificados SSL/TLS no servidor.
 
 2. Rebuild e execute:
 
@@ -1161,6 +1163,8 @@ qr_base64 = qr.png_as_base64_str(scale=8)
 O servidor envia múltiplas mensagens:
 
 **a) Mensagem "Conn" (Connection):**
+
+> **Nota:** O exemplo abaixo contém valores fictícios para fins de documentação. O campo "secret" é um exemplo de dados criptografados retornados pelo servidor WhatsApp, não uma chave de API real.
 
 ```json
 {
@@ -2024,7 +2028,7 @@ Reimplementações do WhatsApp Web em outras linguagens:
 |---------|-----------|------|--------|
 | **Baileys** | Node.js/TypeScript | [GitHub](https://github.com/WhiskeySockets/Baileys) | ✅ Ativo |
 | **WaJs** | TypeScript | [GitHub](https://github.com/ndunks/WaJs) | ✅ Ativo |
-| **kyros** | Python 3 | [GitHub](https://github.com/p4kl0nc4t/kyros) | ⚠️ Mantenção |
+| **kyros** | Python 3 | [GitHub](https://github.com/p4kl0nc4t/kyros) | ⚠️ Manutenção |
 | **whatsappweb-rs** | Rust | [GitHub](https://github.com/wiomoc/whatsappweb-rs) | ⚠️ Descontinuado |
 | **go-whatsapp** | Go | [GitHub](https://github.com/Rhymen/go-whatsapp) | ⚠️ Descontinuado |
 | **whatsappweb-clj** | Clojure | [GitHub](https://github.com/vzaramel/whatsappweb-clj) | ⚠️ Experimental |
